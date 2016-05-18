@@ -8,6 +8,7 @@ import javax.persistence.Id;
 
 @Data
 @Entity
+@NoArgsConstructor
 @ToString
 public class User {
     @Id
@@ -15,17 +16,17 @@ public class User {
     private Long id;
 
     @NonNull
-    private final String firstName;
+    private String firstName;
 
     @NonNull
-    private final String lastName;
+    private String lastName;
 
     @NonNull
     private double balance;
 
     @NonNull
-    private final String username;
+    private String username;
 
     @NonNull
-    private final String password;
+    private String password;
 }

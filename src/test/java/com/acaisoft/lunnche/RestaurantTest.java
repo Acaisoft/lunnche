@@ -35,7 +35,7 @@ import java.util.List;
 @Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-public class ApplicationIntegrationTests {
+public class RestaurantTest {
 
     @Autowired
     private UserRepository userRepository;
