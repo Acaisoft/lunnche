@@ -1,9 +1,9 @@
-package example.springdata.multistore;
+package com.acaisoft.lunnche;
 
 
-import example.springdata.multistore.meal.Meal;
-import example.springdata.multistore.meal.MealRepository;
-import example.springdata.multistore.restaurant.RestaurantRepository;
+import com.acaisoft.lunnche.repository.MealRepository;
+import com.acaisoft.lunnche.repository.RestaurantRepository;
+import com.acaisoft.lunnche.model.Meal;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

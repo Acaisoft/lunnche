@@ -13,18 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package example.springdata.multistore;
+package com.acaisoft.lunnche;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * Application configuration file. Used for bootstrap and data setup.
- *
- * @author Greg Turnquist
- * @author Oliver Gierke
- * @author Thomas Darimont
- */
 @SpringBootApplication
 public class Application {
 
