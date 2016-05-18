@@ -21,7 +21,7 @@ public class Restaurant {
     @NotNull
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "restaurant")
     private List<Meal> meals = new ArrayList<>();
 
 }

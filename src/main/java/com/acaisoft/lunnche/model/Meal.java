@@ -10,7 +10,7 @@ import java.util.List;
 
 @Data
 @Entity
-@ToString
+@ToString(exclude = "restaurant")
 public class Meal {
     @Id
     @GeneratedValue
@@ -21,5 +21,9 @@ public class Meal {
 
     @NotNull
     private double price;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(name = "restaurant_id")
+    private Restaurant restaurant;
 
 }

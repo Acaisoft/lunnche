@@ -16,7 +16,7 @@ public class Purchase {
     @GeneratedValue
     private Long id;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "purchase")
     private List<PurchaseOrder> purchaseOrders = new ArrayList<>();
 
 }

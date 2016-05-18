@@ -21,6 +21,8 @@ import com.acaisoft.lunnche.model.User;
 import com.acaisoft.lunnche.repository.MealRepository;
 import com.acaisoft.lunnche.repository.RestaurantRepository;
 import com.acaisoft.lunnche.repository.UserRepository;
+import com.github.springtestdbunit.DbUnitTestExecutionListener;
+import com.github.springtestdbunit.annotation.DatabaseSetup;
 import lombok.extern.slf4j.Slf4j;
 
 import org.junit.Assert;
@@ -28,17 +30,21 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
+@Transactional
 public class RestaurantTest {
-
-    @Autowired
-    private UserRepository userRepository;
 
     @Autowired
     private RestaurantRepository restaurantRepository;
@@ -48,26 +54,31 @@ public class RestaurantTest {
 
     @Test
     public void shouldCreateRestaurantWithMeals() {
+
+//        Restaurant restaurant = new Restaurant();
+//        restaurant.setName("Restaurant #1");
+//        restaurant = restaurantRepository.save(restaurant);
+
         Meal meal1 = new Meal();
         meal1.setName("Meal #1");
         meal1.setPrice(10);
+//        meal1.setRestaurant(restaurant);
         mealRepository.save(meal1);
 
         Meal meal2 = new Meal();
         meal2.setName("Meal #2");
         meal2.setPrice(20);
+//        meal2.setRestaurant(restaurant);
         mealRepository.save(meal2);
 
         Restaurant restaurant = new Restaurant();
         restaurant.setName("Restaurant #1");
         restaurant.getMeals().add(meal1);
         restaurant.getMeals().add(meal2);
-        restaurantRepository.save(restaurant);
+        restaurant = restaurantRepository.save(restaurant);
 
         List<Restaurant> restaurants = restaurantRepository.findAll();
-        restaurants.stream().forEach(r -> {
-            System.out.println(r);
-        });
+        restaurants.stream().forEach(System.out::println);
 
         Assert.assertEquals("We have one restaurant", 1, restaurants.size());
         Assert.assertEquals("Restaurant should have 2 meals", 2, restaurants.get(0).getMeals().size());
