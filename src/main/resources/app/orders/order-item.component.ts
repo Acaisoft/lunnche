@@ -3,7 +3,7 @@ import { Order } from './Order';
 
 @Component({
     selector: 'order-item',
-    templateUrl: 'app/orders/order-item.component.html'
+    templateUrl: 'app/purchaseOrders/order-item.component.html'
 })
 
 export class OrderItemComponent {

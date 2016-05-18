@@ -8,16 +8,16 @@ import javax.persistence.*;
 @Data
 @Entity
 @ToString
-public class Order {
+public class PurchaseOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     private User user;
 
-    @OneToOne
+    @ManyToOne
     private Meal meal;
 
 }

@@ -5,7 +5,7 @@ import { Order } from './Order';
 
 @Component({
     selector: '.order-newItem',
-    templateUrl: 'app/orders/order-newItem.component.html'
+    templateUrl: 'app/purchaseOrders/order-newItem.component.html'
 })
 
 export class OrderNewItemComponent {

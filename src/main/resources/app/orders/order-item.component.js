@@ -15,7 +15,7 @@ var OrderItemComponent = (function () {
     OrderItemComponent = __decorate([
         core_1.Component({
             selector: 'order-item',
-            templateUrl: 'app/orders/order-item.component.html'
+            templateUrl: 'app/purchaseOrders/order-item.component.html'
         })
     ], OrderItemComponent);
     return OrderItemComponent;

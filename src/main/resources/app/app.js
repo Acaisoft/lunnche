@@ -7,12 +7,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var browser_1 = require('angular2/platform/browser');
 var core_1 = require('angular2/core');
-var order_list_component_1 = require('./orders/order-list.component');
-var order_newItem_component_1 = require('./orders/order-newItem.component');
+var order_list_component_1 = require('./purchaseOrders/order-list.component');
+var order_newItem_component_1 = require('./purchaseOrders/order-newItem.component');
 var OrdersMain = (function () {
-    // orders: Order[];
+    // purchaseOrders: Order[];
     function OrdersMain() {
-        /* this.orders = [
+        /* this.purchaseOrders = [
              new Order('Adrian Castillo', 'Magiczny Chinczyk', 'Wołowina smażona na gorącym półmisku', 16.00),
              new Order('Maciuś', 'Kebson na cienkim z mieszanym', 'Kebab u Szweda', 10.00)
          ]; */
@@ -21,7 +21,7 @@ var OrdersMain = (function () {
         core_1.Component({
             selector: 'app',
             directives: [order_list_component_1.OrderListComponent, order_newItem_component_1.OrderNewItemComponent],
-            templateUrl: 'app/orders/main.component.html'
+            templateUrl: 'app/purchaseOrders/main.component.html'
         })
     ], OrdersMain);
     return OrdersMain;

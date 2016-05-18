@@ -7,16 +7,16 @@ import { OrderNewItemComponent } from './orders/order-newItem.component';
 @Component({
     selector: 'app',
     directives: [OrderListComponent, OrderNewItemComponent],
-    templateUrl: 'app/orders/main.component.html'
+    templateUrl: 'app/purchaseOrders/main.component.html'
 })
 
 class OrdersMain {
-    // orders: Order[];
+    // purchaseOrders: PurchaseOrder[];
 
     constructor() {
-       /* this.orders = [
-            new Order('Adrian Castillo', 'Magiczny Chinczyk', 'Wołowina smażona na gorącym półmisku', 16.00),
-            new Order('Maciuś', 'Kebson na cienkim z mieszanym', 'Kebab u Szweda', 10.00)
+       /* this.purchaseOrders = [
+            new PurchaseOrder('Adrian Castillo', 'Magiczny Chinczyk', 'Wołowina smażona na gorącym półmisku', 16.00),
+            new PurchaseOrder('Maciuś', 'Kebson na cienkim z mieszanym', 'Kebab u Szweda', 10.00)
         ]; */
     }
 }

@@ -8,11 +8,11 @@ const order = new Orders();
 @Component({
     selector: 'order-list',
     directives: [OrderItemComponent],
-    templateUrl: 'app/orders/order-list.component.html'
+    templateUrl: 'app/purchaseOrders/order-list.component.html'
 })
 
 export class OrderListComponent {
-    // public orders = order.orders;
+    // public purchaseOrders = order.purchaseOrders;
     constructor() {
         console.log(Orders.orders);
     }

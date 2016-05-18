@@ -1,32 +1,33 @@
 package com.acaisoft.lunnche.model;
 
-import lombok.*;
+import lombok.Data;
+import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Data
 @Entity
-@NoArgsConstructor
 @ToString
 public class User {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NonNull
+    @NotNull
     private String firstName;
 
-    @NonNull
+    @NotNull
     private String lastName;
 
-    @NonNull
+    @NotNull
     private double balance;
 
-    @NonNull
+    @NotNull
     private String username;
 
-    @NonNull
+    @NotNull
     private String password;
+
 }

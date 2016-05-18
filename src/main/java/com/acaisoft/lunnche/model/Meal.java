@@ -5,19 +5,21 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Data
 @Entity
 @ToString
 public class Meal {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long id;
 
+    @NotNull
     private String name;
 
+    @NotNull
     private double price;
-
-
 
 }

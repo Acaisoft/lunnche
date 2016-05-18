@@ -1,19 +1,19 @@
     <div class="row">
-        <div class="col-xs-12 col-sm-8 col-lg-10 order-item-left">
-            <div class="order-item-person">
+        <div class="col-xs-12 col-sm-8 col-lg-10 purchaseOrder-item-left">
+            <div class="purchaseOrder-item-person">
                 <img src="http://placehold.it/250x250" alt="" />
-                <strong>{{ order.personName }}</strong>
+                <strong>{{ purchaseOrder.personName }}</strong>
             </div>
-            <div class="order-item-title">{{ order.dishName }}</div>
-            <div class="order-item-comp">{{ order.pubName }}</div>
+            <div class="purchaseOrder-item-title">{{ purchaseOrder.dishName }}</div>
+            <div class="purchaseOrder-item-comp">{{ purchaseOrder.pubName }}</div>
         </div>
-        <div class="col-xs-12 col-sm-4 col-lg-2 order-item-right">
-            <div class="order-item-opt">
+        <div class="col-xs-12 col-sm-4 col-lg-2 purchaseOrder-item-right">
+            <div class="purchaseOrder-item-opt">
                 &times;
             </div>
             <div class="clearBig"></div>
-            <div class="order-item-cost">
-                {{ order.dishPrice }}
+            <div class="purchaseOrder-item-cost">
+                {{ purchaseOrder.dishPrice }}
                 <tiny>zł</tiny>
             </div>
         </div>

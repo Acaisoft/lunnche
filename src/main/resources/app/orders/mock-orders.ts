@@ -16,8 +16,8 @@ export class Orders {
         Orders.push(this.order);
         console.log('Add clicked', this.order);
     }
-    /*orders: Order[] = [
-        new Order('Adrian Castillo', 'Magiczny Chinczyk', 'Wołowina smażona na gorącym półmisku', 16.00),
-        new Order('Maciuś', 'Kebson na cienkim z mieszanym', 'Kebab u Szweda', 10.00)
+    /*purchaseOrders: PurchaseOrder[] = [
+        new PurchaseOrder('Adrian Castillo', 'Magiczny Chinczyk', 'Wołowina smażona na gorącym półmisku', 16.00),
+        new PurchaseOrder('Maciuś', 'Kebson na cienkim z mieszanym', 'Kebab u Szweda', 10.00)
     ];*/
 }

@@ -13,10 +13,10 @@ import java.util.List;
 public class Purchase {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long id;
 
     @OneToMany
-    private List<Order> orders = new ArrayList<>();
+    private List<PurchaseOrder> purchaseOrders = new ArrayList<>();
 
 }

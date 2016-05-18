@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('angular2/core');
-var mock_orders_1 = require('./mock-orders');
+var mock_orders_1 = require('./mock-purchaseOrders');
 var Order_1 = require('./Order');
 var OrderNewItemComponent = (function () {
     function OrderNewItemComponent() {
@@ -32,7 +32,7 @@ var OrderNewItemComponent = (function () {
     OrderNewItemComponent = __decorate([
         core_1.Component({
             selector: '.order-newItem',
-            templateUrl: 'app/orders/order-newItem.component.html'
+            templateUrl: 'app/purchaseOrders/order-newItem.component.html'
         })
     ], OrderNewItemComponent);
     return OrderNewItemComponent;

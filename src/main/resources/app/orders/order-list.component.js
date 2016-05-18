@@ -7,10 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('angular2/core');
 var order_item_component_1 = require('./order-item.component');
-var mock_orders_1 = require('./mock-orders');
+var mock_orders_1 = require('./mock-purchaseOrders');
 var order = new mock_orders_1.Orders();
 var OrderListComponent = (function () {
-    // public orders = order.orders;
+    // public purchaseOrders = order.purchaseOrders;
     function OrderListComponent() {
         console.log(mock_orders_1.Orders.orders);
     }
@@ -18,7 +18,7 @@ var OrderListComponent = (function () {
         core_1.Component({
             selector: 'order-list',
             directives: [order_item_component_1.OrderItemComponent],
-            templateUrl: 'app/orders/order-list.component.html'
+            templateUrl: 'app/purchaseOrders/order-list.component.html'
         })
     ], OrderListComponent);
     return OrderListComponent;

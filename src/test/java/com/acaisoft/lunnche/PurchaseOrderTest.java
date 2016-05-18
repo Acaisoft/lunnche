@@ -16,12 +16,10 @@
 package com.acaisoft.lunnche;
 
 import com.acaisoft.lunnche.model.Meal;
-import com.acaisoft.lunnche.model.Order;
-import com.acaisoft.lunnche.model.Restaurant;
+import com.acaisoft.lunnche.model.PurchaseOrder;
 import com.acaisoft.lunnche.model.User;
 import com.acaisoft.lunnche.repository.MealRepository;
-import com.acaisoft.lunnche.repository.OrderRepository;
-import com.acaisoft.lunnche.repository.RestaurantRepository;
+import com.acaisoft.lunnche.repository.PurchaseOrderRepository;
 import com.acaisoft.lunnche.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
@@ -36,10 +34,10 @@ import java.util.List;
 @Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-public class OrderTest {
+public class PurchaseOrderTest {
 
     @Autowired
-    private OrderRepository orderRepository;
+    private PurchaseOrderRepository purchaseOrderRepository;
 
     @Autowired
     private UserRepository userRepository;
@@ -52,12 +50,12 @@ public class OrderTest {
         Meal meal1 = new Meal();
         meal1.setName("Meal #1");
         meal1.setPrice(10);
-        mealRepository.save(meal1);
+        meal1 = mealRepository.save(meal1);
 
         Meal meal2 = new Meal();
         meal2.setName("Meal #2");
         meal2.setPrice(20);
-        mealRepository.save(meal2);
+        meal2 = mealRepository.save(meal2);
 
         User user1 = new User();
         user1.setFirstName("Name");
@@ -65,22 +63,21 @@ public class OrderTest {
         user1.setBalance(50);
         user1.setUsername("a");
         user1.setPassword("a");
-        userRepository.save(user1);
+        user1 = userRepository.save(user1);
 
-        Order order = new Order();
-        order.setUser(user1);
-        order.setMeal(meal1);
-        orderRepository.save(order);
+        PurchaseOrder purchaseOrder = new PurchaseOrder();
+        purchaseOrder.setUser(user1);
+        purchaseOrder.setMeal(meal1);
+        purchaseOrderRepository.save(purchaseOrder);
 
-        List<Order> orders = orderRepository.findAll();
-        orders.stream().forEach(o -> {
+        List<PurchaseOrder> purchaseOrders = purchaseOrderRepository.findAll();
+        purchaseOrders.stream().forEach(o -> {
             System.out.println(o);
         });
 
-
-        Assert.assertEquals("We have one order", 1, orders.size());
-        Assert.assertEquals("Username is ", "a", order.getUser().getUsername());
-        Assert.assertEquals("Meal is ", "Meal #1", order.getMeal().getName());
+        Assert.assertEquals("We have one purchaseOrder", 1, purchaseOrders.size());
+        Assert.assertEquals("Username is ", "a", purchaseOrder.getUser().getUsername());
+        Assert.assertEquals("Meal is ", "Meal #1", purchaseOrder.getMeal().getName());
     }
 
 }
