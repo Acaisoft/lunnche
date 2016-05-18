@@ -1,0 +1,93 @@
+.dashboard-name {
+    border-bottom: 1px solid rgb(206, 206, 206);
+    img {
+        vertical-align: bottom;
+        display: inline-block;
+        margin-left: 5px;
+        height: 70px;
+        border-radius: 100%;
+    }
+    h1 {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 17px;
+        margin-left: 5px;
+    }
+}
+.dashboard-debts {
+    margin-top: 0;
+    box-shadow: 0 8px 15px -10px rgba(0, 0, 0, 0.25) inset;
+    width: 98%;
+    margin: 0 auto;
+    padding: 5px 10px;
+    .small {
+        color: #666;
+    }
+    .dashboard-debts-name {
+        display: inline-block;
+        line-height: 20px;
+        font-size: 0.9em;
+    }
+    li {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 5px 15px 3px 0;
+        cursor: pointer;
+        @include transition(0.15s all);
+        @include box-shadow(0px 3px 5px -1px rgba(0,0,0,0.25));
+        img {
+            display: inline-block;
+            margin-top: -21px;
+            width: 40px;
+            border-radius: 100%;
+        }
+        &:hover {
+            @include box-shadow(0 4px 8px -1px rgba(0,0,0,0.25));
+        }
+        @media screen and (max-width: 340px) {
+            display: block;
+            margin-right: 0;
+            position: relative;
+            br {
+                display: none;
+            }
+            img {
+                margin-top: 0;
+            }
+            b {
+                display: block;
+                font-size: 1.3em;
+                position: relative;
+                top: 2px;
+            }
+            .dashboard-debt-value {
+                display: inline-block;
+                position: absolute;
+                right: 10px;
+                top: 14px;
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+.dashboard-buttons {
+    display: block;
+    margin-top: 20px;
+    a {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        padding: 5px 10px;
+        margin-bottom: 5px;
+        z-index: 9;
+        background-color: #fcfcfc;
+        color: #000;
+        @include box-shadow(0px 2px 7px -1px rgba(0,0,0,0.25));
+        @include transition(0.07s all);
+        &:hover {
+            z-index: 20;
+            color: #555;
+            @include box-shadow(0px 5px 15px 0px rgba(0,0,0,0.25));
+        }
+    }
+}

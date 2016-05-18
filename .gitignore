@@ -14,3 +14,7 @@ hs_err_pid*
 target/
 *.iml
 .idea/
+
+
+src/main/resources/node_modules/
+src/main/resources.sass-cache/

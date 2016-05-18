@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+</head>
+
+<body>
+
+    <div class="container content">
+        <br />
+        <br />
+        <form>
+            <input type="text" name="text" class="form-control" value="" placeholder="Wpisz tekst...">
+            <br />
+        </form>
+        <input type="button" name="submit" class="btn btn-primary" value="Wyślij dane">
+        <br />
+        <div class="send">
+
+        </div>
+        <div class="returned">
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+        var destination = "index.html";
+        var dane;
+
+        $(".btn").click(function() {
+            dane = $("form").serialize();
+            $(".send").html("Wysłałeś dane: " + dane);
+            $.ajax({
+                url: destination,
+                data: dane,
+                success: function(data, status) {
+                    $(".returned").html("Połączenie udane! Serwer razem ze statusem <b>" + status + "</b> zwrócił te dane: <br />" + data);
+                },
+                error: function(data, status) {
+                    $(".returned").html("Coś się zjebało :/. To jest status: " + status + ", a to jakieś śmieci :v : <br />" + data);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
