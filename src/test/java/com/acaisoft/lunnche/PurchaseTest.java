@@ -66,7 +66,7 @@ public class PurchaseTest {
         List<Purchase> purchases = purchaseRepository.findAll();
         purchases.stream().forEach(System.out::println);
 
-        Assert.assertEquals("We have one", 1, purchases.size());
+        Assert.assertEquals("We have three", 3, purchases.size());
     }
 
 }

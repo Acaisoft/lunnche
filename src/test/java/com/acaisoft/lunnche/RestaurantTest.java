@@ -80,7 +80,7 @@ public class RestaurantTest {
         List<Restaurant> restaurants = restaurantRepository.findAll();
         restaurants.stream().forEach(System.out::println);
 
-        Assert.assertEquals("We have one restaurant", 1, restaurants.size());
+        Assert.assertEquals("We have three restaurants(2 from sql, 1 from here)", 3, restaurants.size());
         Assert.assertEquals("Restaurant should have 2 meals", 2, restaurants.get(0).getMeals().size());
     }
 
