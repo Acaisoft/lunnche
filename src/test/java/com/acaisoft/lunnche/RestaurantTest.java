@@ -81,7 +81,7 @@ public class RestaurantTest {
         restaurants.stream().forEach(System.out::println);
 
         Assert.assertEquals("We have three restaurants(2 from sql, 1 from here)", 3, restaurants.size());
-        Assert.assertEquals("Restaurant should have 2 meals", 2, restaurants.get(0).getMeals().size());
+        Assert.assertEquals("Restaurant #1 should have 2 meals", 2, restaurants.get(0).getMeals().size());
     }
 
 }
