@@ -1,5 +1,6 @@
 package com.acaisoft.lunnche.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -22,6 +23,7 @@ public class Meal {
     @NotNull
     private double price;
 
+    @JsonIgnore
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
