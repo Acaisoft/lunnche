@@ -32,21 +32,21 @@ public class DebtController {
         return userDebts; //returns ALL of user debts
     }
 
-    @RequestMapping(value = "/highestcredit", method = RequestMethod.GET)
+    @RequestMapping(value = "/highestcredit")
     @ResponseBody
     public Debt highestCredit(){
-        List<User> users = userRepository.findAll();
-        User foundUser =  users.get(i);
+        List<User> usersList = userRepository.findAll();
+        User foundUser =  usersList.get(i);
         List<Debt> userCredits = debtRepository.findByCreditorOrderByDebtDesc(foundUser);
         Debt highestCredit = userCredits.get(0);
         return highestCredit; //returns only the highest debt, with you as creditor
     }
 
-    @RequestMapping(value = "/highestcredit", method = RequestMethod.GET)
+    @RequestMapping(value = "/highestdebt")
     @ResponseBody
     public Debt highestDebt(){
-        List<User> users = userRepository.findAll();
-        User foundUser =  users.get(i);
+        List<User> usersLists = userRepository.findAll();
+        User foundUser =  usersLists.get(i);
         List<Debt> userDebt = debtRepository.findByDebtorOrderByDebtDesc(foundUser);
         Debt highestDebt = userDebt.get(0);
         return highestDebt; //returns only the highest debt, with you as a debtor
