@@ -1,6 +1,8 @@
 package com.acaisoft.lunnche.controller;
 
 import com.acaisoft.lunnche.model.Debt;
+import com.acaisoft.lunnche.model.User;
+import com.acaisoft.lunnche.repository.UserRepository;
 import com.acaisoft.lunnche.repository.DebtRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,9 +18,37 @@ public class DebtController {
     @Autowired
     private DebtRepository debtRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
+    private Integer i = 0;
+
     @RequestMapping(value = "/personaldebts", method = RequestMethod.GET)
     @ResponseBody
-    public void getDebts(){
-        List<Debt> debts = debtRepository.findAll();
+    public List getDebts(){
+        List<User> users = userRepository.findAll();
+        User foundUser =  users.get(i);
+        List<Debt> userDebts = debtRepository.findByCreditor(foundUser);
+        return userDebts; //returns ALL of user debts
+    }
+
+    @RequestMapping(value = "/highestcredit", method = RequestMethod.GET)
+    @ResponseBody
+    public Debt highestCredit(){
+        List<User> users = userRepository.findAll();
+        User foundUser =  users.get(i);
+        List<Debt> userCredits = debtRepository.findByCreditorOrderByDebtDesc(foundUser);
+        Debt highestCredit = userCredits.get(0);
+        return highestCredit; //returns only the highest debt, with you as creditor
+    }
+
+    @RequestMapping(value = "/highestcredit", method = RequestMethod.GET)
+    @ResponseBody
+    public Debt highestDebt(){
+        List<User> users = userRepository.findAll();
+        User foundUser =  users.get(i);
+        List<Debt> userDebt = debtRepository.findByDebtorOrderByDebtDesc(foundUser);
+        Debt highestDebt = userDebt.get(0);
+        return highestDebt; //returns only the highest debt, with you as a debtor
     }
 }

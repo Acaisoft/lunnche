@@ -56,9 +56,23 @@ public class DebtTest {
         debt2.setDebt(20.4);
         debtRepository.save(debt2);
 
-        List<Debt> debts = debtRepository.findAll();
-        debts.stream().forEach(System.out::println);
+        Debt debt3 = new Debt();
+        debt3.setCreditor(user1);
+        debt3.setDebtor(user2);
+        debt3.setDebt(60);
+        debtRepository.save(debt3);
 
-        Assert.assertEquals("There should be two debts", 2, debts.size());
+        //List<Debt> debts = debtRepository.findAll();
+        //debts.stream().forEach(System.out::println);
+
+        List<Debt> debtByUser = debtRepository.findByCreditor(user1);
+        //debtByUser.stream().forEach(System.out::println);
+
+        List<Debt> highestDebtByUser = debtRepository.findByCreditorOrderByDebtDesc(user1);
+        Debt highdebt = highestDebtByUser.get(0);
+        System.out.println(highdebt);
+       // Assert.assertEquals("There should be two debts", 2, debts.size());
+        Assert.assertEquals("There should be two debts of user1", 2, debtByUser.size());
+
     }
 }
