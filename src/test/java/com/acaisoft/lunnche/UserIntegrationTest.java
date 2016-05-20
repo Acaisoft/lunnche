@@ -43,6 +43,6 @@ public class UserIntegrationTest {
         List<User> users = userRepository.findAll();
         users.stream().forEach(System.out::println);
 
-        Assert.assertEquals("We have 4 users", 4, users.size());
+        Assert.assertEquals("Users", 2, users.size());
     }
 }

@@ -21,6 +21,7 @@
         <querydsl.version>4.1.0</querydsl.version>
         <spring-data-releasetrain.version>Hopper-SR1</spring-data-releasetrain.version>
         <lombok.version>1.16.8</lombok.version>
+        <postgresql.version>9.4.1208</postgresql.version>
     </properties>
 
     <dependencies>
@@ -49,10 +50,18 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
+        <!--<dependency>-->
+            <!--<groupId>com.h2database</groupId>-->
+            <!--<artifactId>h2</artifactId>-->
+        <!--</dependency>-->
+
+        <!-- Persistence dependencies -->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
         </dependency>
+
 
         <!-- Test dependencies -->
         <dependency>

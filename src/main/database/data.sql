@@ -7,9 +7,9 @@ INSERT INTO meal (id, name, price, restaurant_id) VALUES (2, 'Meal #12', 20, 1);
 INSERT INTO meal (id, name, price, restaurant_id) VALUES (3, 'Meal #21', 15, 2);
 INSERT INTO meal (id, name, price, restaurant_id) VALUES (4, 'Meal #22', 25, 2);
 
-INSERT INTO user (id, first_name, last_name, balance, username, password)
+INSERT INTO "user" (id, first_name, last_name, balance, username, password)
 VALUES (1, 'Jan', 'Kowalski', 50, 'jan.kowalski', 'password');
-INSERT INTO user (id, first_name, last_name, balance, username, password)
+INSERT INTO "user" (id, first_name, last_name, balance, username, password)
 VALUES (2, 'Stefan', 'Nowak', 100, 'stefan.nowak', 'password');
 
 INSERT INTO purchase (id) VALUES (1);

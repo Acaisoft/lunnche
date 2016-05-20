@@ -37,9 +37,9 @@ public class RestaurantIntegrationTest {
         List<Restaurant> restaurants = restaurantRepository.findAll();
         restaurants.stream().forEach(System.out::println);
 
-        Assert.assertEquals("We have three restaurants", 3, restaurants.size());
-        Assert.assertEquals("We have one restaurant ", "Restaurant #1", restaurants.get(0).getName());
-        Assert.assertEquals("Restaurant should have 2 meals", 2, restaurants.get(0).getMeals().size());
+        Assert.assertEquals("Rrestaurants number", 1, restaurants.size());
+        Assert.assertEquals("Restaurant name", "Restaurant #1", restaurants.get(0).getName());
+        Assert.assertEquals("Restaurant meals", 2, restaurants.get(0).getMeals().size());
     }
 
 

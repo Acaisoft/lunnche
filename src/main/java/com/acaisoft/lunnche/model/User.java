@@ -8,8 +8,9 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Data
-@Entity
 @ToString
+@Entity
+@Table(name="\"user\"")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
