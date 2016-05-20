@@ -1,0 +1,438 @@
+.order-item,
+.order-newItem {
+    padding: 5px 10px;
+    @media (min-width: 34em) {
+        padding: 10px 10px 0;
+    }
+    margin-bottom: 8px;
+    @include box-shadow(0 2px 7px -1px rgba(0,0,0,0.25));
+    @include transition(0.07s all);
+    &:hover {
+        @include box-shadow(0 5px 15px 0 rgba(0,0,0,0.25));
+    }
+    &.small-item {
+        .order-item-title {
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+    }
+}
+.order-item {
+    margin: 5px 10px 8px;
+    .row {
+        position: relative;
+    }
+    @media (min-width: 34em) {
+        padding: 0 10px;
+    }
+}
+.order-item-title {
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+.order-item-comp {
+    color: #818a91;
+    font-size: 0.8rem;
+}
+.order-item-person,
+.order-newItem-person {
+    padding: 10px 0;
+    img {
+        width: 40px;
+        margin-right: 5px;
+        border-radius: 100%;
+    }
+    strong {
+        display: inline-block;
+        position: relative;
+        top: 1px;
+        font-size: 0.9rem;
+    }
+}
+.order-item-cost,
+.order-newItem-cost {
+    display: inline-block;
+    font-size: 1.4rem;
+    tiny {
+        margin-left: -4px;
+    }
+}
+.order-item-opt,
+.order-newItem-opt {
+    display: inline-block;
+    float: right;
+    font-size: 3rem;
+    line-height: 2rem;
+    cursor: pointer;
+    @include user-select(none);
+}
+/*
+.order-addItem {
+    position: fixed;
+    left: 0;
+    top: 65px;
+    &.active {
+        position: absolute;
+        width: 100%;
+        // height: 80%;
+        // min-height: 380px;
+        @include box-shadow(0px 0px 5px 5px rgba(0,0,0,0.25));
+        .order-addItem-toggler {
+            width: 100%;
+            color: $main-color;
+            background-color: #fff;
+            border-bottom: $main-color 1px solid;
+            &:before {
+                content: "×";
+            }
+        }
+        .order-addItem-panel {
+            padding: 4px 7px 10px;
+            background-color: #fff;
+            display: block;
+        }
+        .order-item {
+            background-color: $main-color;
+            color: #fff;
+        }
+    }
+}
+.order-addItem-toggler {
+    width: 35px;
+    height: 35px;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    padding-left: 7px;
+    cursor: pointer;
+    background-color: $main-color;
+    color: #fff;
+    &:before {
+        content: "+";
+    }
+}
+.order-addItem-panel {
+    display: none;
+}
+======================================================
+==========================    ========================
+===========================  =========================
+===========================  ====  ===================
+=  = ====   ===  =   =  ===  ===    ===   ===  =  = ==
+=     ==  =  ==  =   =  ===  ====  ===  =  ==        =
+=  =  ==     ===   =   ====  ====  ===     ==  =  =  =
+=  =  ==  ======   =   ====  ====  ===  =====  =  =  =
+=  =  ==  =  ==== === =====  ====  ===  =  ==  =  =  =
+=  =  ===   ===== === ====    ===   ===   ===  =  =  =
+======================================================
+*/
+.order-newItem-comp,
+.order-newItem-dish {
+    margin: -5px -10px 1px;
+    padding: 5px 0 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #e2e2e2;
+    @include transition(0.07s all);
+    input {
+        width: 100%;
+        height: 24px;
+        display: none;
+    }
+    &:before {
+        font-weight: normal;
+        color: #666;
+        font-size: 0.8em;
+        display: block;
+        padding: 0 10px;
+    }
+}
+.order-newItem-comp-text,
+.order-newItem-dish-text {
+    padding: 0 10px 5px;
+}
+.order-newItem-comp-wrap,
+.order-newItem-dish-wrap {
+    position: relative;
+}
+.order-newItem-comp {
+    margin: -5px 5px 1px;
+    &:before {
+        content: "Firma";
+    }
+}
+.order-newItem-dish {
+    margin: 0 5px;
+    &:before {
+        content: "Danie";
+    }
+}
+.order-newItem-person {
+    display: inline-block;
+    padding: 3px;
+    margin: 7px 0;
+    cursor: pointer;
+    @include transition(0.07s all);
+    &:hover {
+        @include box-shadow(0px 1px 2px 0px rgba(0,0,0,0.25));
+    }
+    &:active {
+        @include box-shadow(0px 2px 3px 0px rgba(0,0,0,0.25));
+    }
+    strong {
+        top: -6px;
+    }
+}
+.order-newItem-person-noChoosen {
+    color: #808080;
+    font-weight: lighter;
+}
+.order-newItem-addSign {
+    width: 35px;
+    margin-right: 5px;
+    border-radius: 100%;
+    height: 35px;
+    background-color: rgb(204, 204, 204);
+    font-size: 2rem;
+    line-height: 1.1em;
+    padding-left: 9px;
+    display: inline-block;
+}
+/*
+============================================================================
+========  ===================================     ==========================
+========  ==================================  ===  =========================
+========  =================================  ===============================
+==   ===  ======   ====   ====   ====   ===  =========   ===  =  = ===    ==
+=  =  ==    ===     ==     ==  =  ==  =  ==  ========     ==        ==  =  =
+=  =====  =  ==  =  ==  =  ===  ====     ==  ========  =  ==  =  =  ==  =  =
+=  =====  =  ==  =  ==  =  ====  ===  =====  ========  =  ==  =  =  ==    ==
+=  =  ==  =  ==  =  ==  =  ==  =  ==  =  ===  ===  ==  =  ==  =  =  ==  ====
+==   ===  =  ===   ====   ====   ====   =====     ====   ===  =  =  ==  ====
+============================================================================
+*/
+.chosen-search {
+    input {
+        display: block;
+    }
+}
+.chosen-drop,
+.chosen-single {
+    @include border-radius(0 !important);
+    border: 0 none !important;
+}
+.chosen-single {
+    background: none !important;
+}
+.chosen-container-active {
+    @include box-shadow(none !important);
+}
+.order-chooseComp,
+.order-chooseDish {
+    margin: -1px 5px 0;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    padding-right: 10px;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #e2e2e2;
+    ul {
+        background-color: rgb(255, 255, 255);
+        border-width: 0 1px;
+        border-style: solid;
+        border-color: rgb(204, 204, 204);
+        @include box-shadow(0px 5px 10px -2px rgba(0,0,0,0.25));
+        li {
+            padding: 4px 10px;
+            border-bottom: 1px solid #ccc;
+            font-size: 0.9rem;
+            font-weight: bold;
+            @include transition(0.15s all);
+            &:hover {
+                background-color: #e2e2e2;
+            }
+        }
+    }
+}
+/*
+=========================================================================================
+========  =================================       =======================================
+========  =================================  ====  ======================================
+========  =================================  ====  ======================================
+==   ===  ======   ====   ====   ====   ===  ====  ===   ===  =   ====   ====   ===  = ==
+=  =  ==    ===     ==     ==  =  ==  =  ==       ===  =  ==    =  ==  =  ==     ==     =
+=  =====  =  ==  =  ==  =  ===  ====     ==  ========     ==  ========  ====  =  ==  =  =
+=  =====  =  ==  =  ==  =  ====  ===  =====  ========  =====  =========  ===  =  ==  =  =
+=  =  ==  =  ==  =  ==  =  ==  =  ==  =  ==  ========  =  ==  =======  =  ==  =  ==  =  =
+==   ===  =  ===   ====   ====   ====   ===  =========   ===  ========   ====   ===  =  =
+=========================================================================================
+*/
+.order-newItem-choosePerson {
+    font-size: 1.4rem;
+    img {
+        width: 50px;
+        border-radius: 100%;
+    }
+    li {
+        padding: 8px 15px 0;
+        cursor: pointer;
+        &:hover {
+            background-color: #f1f1f1;
+        }
+        &:last-of-type {
+            padding: 8px 15px;
+            hr {
+                display: none;
+            }
+        }
+    }
+    hr {
+        margin: 8px 0 0;
+    }
+}
+.order-newItem-choosePerson-search {
+    position: relative;
+    & > div {
+        display: none;
+        position: absolute;
+        line-height: 45px;
+        top: 0;
+        right: 0;
+        width: 31px;
+        padding: 0 6px;
+        border-left: 1px solid rgb(222, 222, 222);
+        font-size: 2em;
+        cursor: pointer;
+        @include transition(0.15s all);
+        &:hover {
+            background-color: #fafafa;
+        }
+        &:active {
+            background-color: #fafafa;
+        }
+    }
+    input {
+        border: none;
+        border-bottom: 1px solid #dedede;
+        width: 100%;
+        padding: 12px 15px;
+        @include transition(0.15s all);
+        &:focus {
+            padding: 12px 45px 12px 15px;
+            & + div {
+                display: block;
+            }
+        }
+    }
+}
+/*
+=========================================================
+=========================================================
+=========================================================
+=========================================================
+==   ===  =  ==  =  = ===  =  = ====   ===  =   ===  =  =
+=  =  ==  =  ==        ==        ==  =  ==    =  ==  =  =
+==  ====  =  ==  =  =  ==  =  =  =====  ==  ========    =
+===  ===  =  ==  =  =  ==  =  =  ===    ==  ==========  =
+=  =  ==  =  ==  =  =  ==  =  =  ==  =  ==  =======  =  =
+==   ====    ==  =  =  ==  =  =  ===    ==  ========   ==
+=========================================================
+*/
+.order-summary {
+    margin-bottom: 5px;
+    text-align: right;
+    p {
+        text-align: right;
+    }
+    button {
+        float: right;
+    }
+}
+/*
+===================================
+=====================  ============
+=====================  ============
+=====================  ============
+=  =  = ====   ======  ==  ===   ==
+=        ==  =  ===    ======  =  =
+=  =  =  ==     ==  =  ==  =====  =
+=  =  =  ==  =====  =  ==  ===    =
+=  =  =  ==  =  ==  =  ==  ==  =  =
+=  =  =  ===   ====    ==  ===    =
+===================================
+*/
+@media (max-width: 34em) {
+    /*
+    .order-item-opt,
+    .order-newItem-opt {
+        position: absolute;
+        padding: 0 7px;
+        &:hover {
+            color: #454a4e;
+        }
+    }
+    .order-item-opt {
+        top: -99px;
+        right: 11px;
+    }
+    .order-newItem-opt {
+        bottom: 6px;
+        right: 7px;
+        padding: 0 7px;
+    }
+    */
+    .order-item-right {
+        position: static;
+    }
+    .order-item-person {
+        padding: 10px 35px 10px 0;
+    }
+    .order-item-opt {
+        position: absolute;
+        top: 7px;
+        right: 19px;
+    }
+}
+@media (min-width: 34em) {
+    .order-item-cost,
+    .order-item-opt,
+    .order-newItem-cost,
+    .order-newItem-opt {
+        display: block;
+        text-align: right;
+    }
+    .order-item-cost,
+    .order-newItem-cost {
+        font-size: 2.4rem;
+        tiny {
+            margin-left: -10px;
+        }
+    }
+    .order-newItem-cost tiny {
+        margin-left: 0;
+    }
+    .order-newItem-comp {
+        margin-top: -10px;
+    }
+    .order-item-opt,
+    .order-newItem-opt {
+        margin-bottom: 10px;
+        float: right;
+        padding-top: 7px;
+    }
+    .order-newItem-opt {
+        margin-bottom: 46px;
+        padding-top: 0;
+    }
+}
+@media (min-width: 48em) {
+    .order-newItem-comp,
+    .order-newItem-dish {
+        margin: -10px -5px 0 5px;
+    }
+    .order-newItem-opt {
+        margin-bottom: 0;
+    }
+}
