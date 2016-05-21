@@ -1,0 +1,119 @@
+<div class="container content">
+    <h1 style="margin: 0;">Zamówienie</h1>
+    <a [routerLink]="['Dashboard']" class="small">&raquo; powrót do strony głównej</a>
+    <br/>
+    <br/>
+    <ul class="list-unstyled">
+        <li class="order-newItem">
+            <form role="form" (submit)="add()" [ngFormModel]="formnew">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9 col-lg-10 order-newItem-left">
+                        <div class="row">
+                            <div class="col-md-4 nopadding order-newItem-comp-wrap">
+                                <div class="order-newItem-comp">
+                                    <input id="newItem-compH" type="text" style="display: block" ngControl="compName">
+                                    <select class="order-chooseComp" id="newItem-comp">
+                                        <option *ngFor="let comp of comps" [value]="comp.id">{{comp.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-8 nopadding order-newItem-dish-wrap">
+                                <div class="order-newItem-dish">
+                                    <input id="newItem-dishH" type="text" ngControl="dishName">
+                                    <select class="order-chooseDish" id="newItem-dish">
+                                        <option *ngFor="let dish of dishes" [value]="dish.id">{{dish.name}}</option>
+                                    </select>
+                                </div>
+                                <!--<div class="order-chooseDish">
+                                    <ul class="list-unstyled">
+                                        <li>Magiczny Chińczyk</li>
+                                        <li>Kepap</li>
+                                    </ul>
+                                </div>-->
+                            </div>
+                        </div>
+                        <div class="order-newItem-person" data-toggle="modal" data-target=".bd-example-modal-sm">
+                            <div class="order-newItem-addSign">
+                                +
+                            </div>
+                            <strong class="order-newItem-person-noChoosen">dodaj osobę</strong>
+                        </div>
+                        <div class="modal fade bd-example-modal-sm" id="choosePerson" tabindex="-1" role="dialog"
+                             aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content order-newItem-choosePerson-wrap">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel">Wybierz osobę</h4>
+                                    </div>
+                                    <div class="order-newItem-choosePerson-search">
+                                        <input type="text" id="choosePersonSearch" placeholder="Wyszukaj osobę...">
+                                        <div>&times;</div>
+                                    </div>
+                                    <ul class="list-unstyled order-newItem-choosePerson">
+                                        <li>
+                                            <img src="http://placehold.it/250x250" alt=""/> Adrian Castillo
+                                            <hr/>
+                                        </li>
+                                        <li>
+                                            <img src="http://placehold.it/250x250" alt=""/> Maciuś
+                                            <hr/>
+                                        </li>
+                                    </ul>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij
+                                        </button>
+                                        <button type="button" class="btn btn-primary">Dodaj</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--
+                        -->
+
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-lg-2 order-newItem-right">
+                        <button type="submit" class="order-newItem-opt">
+                            +
+                        </button>
+                        <div class="clearBig"></div>
+                        <div class="order-newItem-cost">
+                            --.--
+                            <tiny>zł</tiny>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </li>
+        <li class="order-item" *ngFor="let order of orders">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-lg-10 order-item-left">
+                    <div class="order-item-person">
+                        <img src="http://placehold.it/250x250" alt=""/>
+                        <strong>{{ order.personName }}</strong>
+                    </div>
+                    <div class="order-item-title">{{ order.dishName }}</div>
+                    <div class="order-item-comp">{{ order.compName }}</div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-lg-2 order-item-right">
+                    <div class="order-item-opt">
+                        &times;
+                    </div>
+                    <div class="clearBig"></div>
+                    <div class="order-item-cost">
+                        {{ order.dishPrice }}
+                        <tiny>zł</tiny>
+                    </div>
+                </div>
+            </div>
+
+        </li>
+    </ul>
+
+    <div class="order-summary">
+        <p>Łączny koszt zamówienia: <span class="h1">16.00</span><span class="tiny">zł</span></p>
+        <button class="btn btn-primary">Zatwierdź zamówienie</button>
+    </div>
+</div>

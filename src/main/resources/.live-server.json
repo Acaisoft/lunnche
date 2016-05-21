@@ -1,10 +1,11 @@
 var liveServer = require("live-server");
 
 var params = {
-port: 8080,.
+port: 8080, .
 host: "localhost",
 root: "/src",
 wait: 2000,
-mount: [['/node_modules', './node_modules']]
+mount: [['/node_modules', './node_modules']],
+proxyPath: "/api:8090"
 };
 liveServer.start(params);

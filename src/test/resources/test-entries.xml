@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <restaurant id="1" name="Restaurant #1"/>
+
+    <meal id="1" name="Meal #1" price="10" restaurant_id="1"/>
+    <meal id="2" name="Meal #2" price="20" restaurant_id="1"/>
+</dataset>

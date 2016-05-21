@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #cecece;
+}
+tiny {
+    font-size: 12px;
+}
+.clear {
+    clear: both;
+}
+.clearBig {
+    @media (min-width: 34em) {
+        clear: both;
+    }
+}
+.nomargin {
+    margin: 0 !important;
+}
+.nopadding {
+    padding: 0 !important;
+}
+.debt {
+    color: #df3939;
+}
+.profit {
+    color: rgb(42, 204, 2);
+}
+.content {
+    margin-top: 20px;
+    padding: 15px 10px;
+    background-color: #fff;
+}
+.modal-details {
+    position: relative;
+    padding: 15px;
+}
+/*
+===============================================
+=====================  =======  ===============
+=====================   ======  ===============
+==  =================    =====  ===============
+=    ===   ===    ===  ==  ===  ===   ===  =  =
+==  ===     ==  =  ==  ===  ==  ==  =  ==  =  =
+==  ===  =  ==  =  ==  ====  =  =====  ===   ==
+==  ===  =  ==    ===  =====    ===    ===   ==
+==  ===  =  ==  =====  ======   ==  =  ==== ===
+==   ===   ===  =====  =======  ===    ==== ===
+===============================================
+*/
+.topNav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 5%;
+    z-index: 999;
+    @include user-select(none);
+}
+.topNav-notifications-wrap,
+.topNav-profile-wrap {
+    display: inline-block;
+}
+.topNav-notifications,
+.topNav-profile {
+    cursor: pointer;
+    background-color: rgb(85, 85, 85);
+    padding: 6px 10px 8px;
+    @include box-shadow(0px 1px 6px 2px rgba(0,0,0,0.25));
+}
+.topNav-notifications-wrap {
+    position: relative;
+}
+.topNav-notifications {
+    img {
+        height: 35px;
+    }
+}
+.topNav-notifications-list,
+.topNav-profile-list {
+    position: absolute;
+    top: 49px;
+    right: 0;
+    font-size: 0.8rem;
+    background-color: #fff;
+    border: 1px solid rgb(206, 206, 206);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.25);
+    li {
+        &:hover {
+            background-color: #fafafa;
+        }
+        hr {
+            margin: 5px 0 0;
+        }
+    }
+}
+.topNav-notifications-list {
+    width: 275px;
+    li {
+        padding: 5px 10px 0;
+    }
+}
+.topNav-notifications-list-header {
+    color: rgb(153, 153, 153);
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 5px 10px 3px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+.topNav-profile-wrap {
+    position: relative;
+}
+.topNav-profile {
+    color: rgb(221, 221, 221);
+    font-weight: bold;
+    span {
+        padding-top: 5px;
+    }
+    img {
+        height: 35px;
+        border-radius: 100%;
+    }
+}
+.topNav-profile-list {
+    position: absolute;
+    width: 100%;
+    cursor: pointer;
+    li {
+        padding: 5px 10px;
+        font-size: 1.25em;
+        &:not(:last-child) {
+            border-bottom: 1px solid #cecece;
+        }
+    }
+}
+.notification-name {
+    font-weight: bold;
+}
+.notification-buttons {
+    text-align: center;
+    a {
+        display: inline-block;
+        padding: 3px 5px;
+    }
+    .divider {
+        display: inline-block;
+        border-left: 1px solid #cecece;
+        width: 1px;
+        height: 10px;
+    }
+}
