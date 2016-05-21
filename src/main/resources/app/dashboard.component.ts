@@ -10,13 +10,23 @@ import {UsersService} from './users.service';
     directives: [ROUTER_DIRECTIVES],
 })
 export class DashboardComponent implements OnInit {
-    users: User[];
+    users:User[];
 
-    constructor(@Inject(UsersService) private usersService:UsersService) { }
+    constructor(@Inject(UsersService) private _usersService:UsersService) { }
 
-    getUsers() {
-        this.usersService.getUsers()
-            .then(users => this.users = users)
+    /*
+     getUsers() {
+     this.usersService.getUsers()
+     .then(users => this.users = users)
+     }
+     */
+
+    private getUsers() {
+        this._usersService
+            .GetAll()
+            .subscribe((data:User[]) => this.users = data,
+                error => console.log(error),
+                () => console.log(this.users));
     }
 
     ngOnInit() {

@@ -12,13 +12,20 @@ var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var users_service_1 = require('./users.service');
 var DashboardComponent = (function () {
-    function DashboardComponent(usersService) {
-        this.usersService = usersService;
+    function DashboardComponent(_usersService) {
+        this._usersService = _usersService;
     }
+    /*
+     getUsers() {
+     this.usersService.getUsers()
+     .then(users => this.users = users)
+     }
+     */
     DashboardComponent.prototype.getUsers = function () {
         var _this = this;
-        this.usersService.getUsers()
-            .then(function (users) { return _this.users = users; });
+        this._usersService
+            .GetAll()
+            .subscribe(function (data) { return _this.users = data; }, function (error) { return console.log(error); }, function () { return console.log(_this.users); });
     };
     DashboardComponent.prototype.ngOnInit = function () {
         this.getUsers();
