@@ -51,4 +51,14 @@ public class DebtController {
         Debt highestDebt = userDebt.get(0);
         return highestDebt; //returns only the highest debt, with you as a debtor
     }
+
+    @RequestMapping(value = "/debtcounter")
+    @ResponseBody
+    public List debtCounts(){
+        List<User> usersLists = userRepository.findAll();
+        User foundUser =  usersLists.get(i);
+        List<Debt> userCredits = debtRepository.findByCreditor(foundUser);
+        List<Debt> userDebts = debtRepository.findByDebtor(foundUser);
+return null;
+    }
 }

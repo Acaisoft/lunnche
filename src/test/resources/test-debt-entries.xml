@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <user id="1" firstName="Maciej" lastName="Sawicki" balance="100" username="maciejs" password="123"/>
+    <user id="2" firstName="Adrian" lastName="Castilo" balance="100" username="adrainc" password="321"/>
+
+    <debt id="1" creditor="/user/1" debtor="/user/2" debt="20"/>
+
+</dataset>

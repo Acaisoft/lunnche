@@ -9,6 +9,7 @@ import java.util.List;
 public interface DebtRepository extends CrudRepository<Debt, Long> {
     List<Debt> findAll();
     List<Debt> findByCreditor(User creditor);
+    List<Debt> findByDebtor(User debtor);
     List<Debt> findByCreditorOrderByDebtDesc(User creditor);
     List<Debt> findByDebtorOrderByDebtDesc(User debtor);
 }
