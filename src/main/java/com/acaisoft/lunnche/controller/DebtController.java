@@ -1,64 +1,57 @@
 package com.acaisoft.lunnche.controller;
 
 import com.acaisoft.lunnche.model.Debt;
-import com.acaisoft.lunnche.model.User;
-import com.acaisoft.lunnche.repository.UserRepository;
+import com.acaisoft.lunnche.model.DebtHistory;
 import com.acaisoft.lunnche.repository.DebtRepository;
+import com.acaisoft.lunnche.repository.DebtHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class DebtController {
+    @Autowired
+    DebtHistoryRepository debtHistoryRepository;
 
     @Autowired
-    private DebtRepository debtRepository;
+    DebtRepository debtRepository;
 
-    @Autowired
-    private UserRepository userRepository;
 
-    private Integer i = 0;
 
-    @RequestMapping(value = "/personaldebts", method = RequestMethod.GET)
+  /*  @RequestMapping(value = "/createdebts")
     @ResponseBody
-    public List getDebts(){
-        List<User> users = userRepository.findAll();
-        User foundUser =  users.get(i);
-        List<Debt> userDebts = debtRepository.findByCreditor(foundUser);
-        return userDebts; //returns ALL of user debts
-    }
-
-    @RequestMapping(value = "/highestcredit")
-    @ResponseBody
-    public Debt highestCredit(){
-        List<User> usersList = userRepository.findAll();
-        User foundUser =  usersList.get(i);
-        List<Debt> userCredits = debtRepository.findByCreditorOrderByDebtDesc(foundUser);
-        Debt highestCredit = userCredits.get(0);
-        return highestCredit; //returns only the highest debt, with you as creditor
-    }
-
-    @RequestMapping(value = "/highestdebt")
-    @ResponseBody
-    public Debt highestDebt(){
-        List<User> usersLists = userRepository.findAll();
-        User foundUser =  usersLists.get(i);
-        List<Debt> userDebt = debtRepository.findByDebtorOrderByDebtDesc(foundUser);
-        Debt highestDebt = userDebt.get(0);
-        return highestDebt; //returns only the highest debt, with you as a debtor
-    }
-
-    @RequestMapping(value = "/debtcounter")
-    @ResponseBody
-    public List debtCounts(){
-        List<User> usersLists = userRepository.findAll();
-        User foundUser =  usersLists.get(i);
-        List<Debt> userCredits = debtRepository.findByCreditor(foundUser);
-        List<Debt> userDebts = debtRepository.findByDebtor(foundUser);
-return null;
-    }
+    private void createDebts(){
+      List<DebtHistory> debtsHistory = debtHistoryRepository.findAll();
+      List<Debt> debts = new ArrayList<Debt>();
+      int a =0;
+      for(int x =0; x< debtsHistory.size(); x++){
+          if(debts.get(a).getCreditor().equals(debtsHistory.get(x).getCreditor())) {
+              if (debts.get(a).getDebtor().equals(debtsHistory.get(x).getDebtor())) {
+                  double sum = debts.get(a).getDebt() + debtsHistory.get(x).getDebt();
+                  debts.get(a).setDebt(sum);
+              }
+              else{
+                for(int b = 0; b<debtsHistory.size();b++){
+                    //check if debts.get(a).getDebtor().equals(debtsHistory.get(b).getDebtor());
+                }
+              }
+          }
+          else if(debts.get(a) == null){
+              debts.get(a).setCreditor(debtsHistory.get(x).getCreditor());
+              debts.get(a).setDebtor(debtsHistory.get(x).getDebtor());
+              debts.get(a).setDebt(debtsHistory.get(x).getDebt());
+          }
+          else{
+              //if creditor is not equal, check whole list again
+              //if found, check its debtor
+              //if that element doesn't contain its debtor, check debtors
+              //if no elemt found, add it to the list
+          }
+      }
+    } */
 }
