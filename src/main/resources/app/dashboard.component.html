@@ -64,11 +64,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md-9">
-            <div class="content">
+            <search-users #filter></search-users>
+            <div>
                 <div class="dashboard-order-list">
-                    <ul class="list-unstyled nomargin">
-                        <li *ngFor="let user of users">
-                            {{ user.firstName }}
+                    <ul class="list-unstyled nomargin" *ngIf="users">
+                        <li class="content" *ngFor="let user of users | usersFilter: filter.filterTerm">
+                            <img src="http://placehold.it/250x250" alt="">
+                            <div class="dashboard-user-name">
+                                {{ user.firstName }} {{ user.lastName }} {{ user.username }} {{ user.balance }}
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -76,7 +80,7 @@
         </div>
         <div class="col-md-3">
             <div class="dashboard-buttons">
-                <a [routerLink]="['NewOrder']">Stwórz zamówienie</a>
+                <a href="#">Stwórz zamówienie</a>
                 <a href="#">Lista zamówień</a>
             </div>
         </div>

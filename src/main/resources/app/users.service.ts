@@ -11,7 +11,7 @@ export class UsersService {
     private headers:Headers;
 
     constructor(@Inject(Http) private _http:Http) {
-        this.actionUrl = 'http://localhost:8080/api/' + 'users';
+        this.actionUrl = '/api/' + 'users';
 
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');

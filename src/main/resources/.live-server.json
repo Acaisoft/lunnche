@@ -1,8 +1,7 @@
 var liveServer = require("live-server");
 
 var params = {
-port: 8080, .
-host: "localhost",
+port: 8080,
 root: "/src",
 wait: 2000,
 mount: [['/node_modules', './node_modules']],

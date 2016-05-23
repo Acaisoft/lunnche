@@ -6,16 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('angular2/core');
-var NewItemComponent = (function () {
-    function NewItemComponent() {
+var UsersFilter = (function () {
+    function UsersFilter() {
     }
-    NewItemComponent = __decorate([
-        core_1.Component({
-            selector: '.order-newItem',
-            templateUrl: 'app/newOrder/new-item.component.html'
+    UsersFilter.prototype.transform = function (value, term) {
+        return value.filter(function (user) { return user.fullName.includes(term); });
+    };
+    UsersFilter = __decorate([
+        core_1.Pipe({
+            name: 'usersFilter'
         })
-    ], NewItemComponent);
-    return NewItemComponent;
+    ], UsersFilter);
+    return UsersFilter;
 }());
-exports.NewItemComponent = NewItemComponent;
-//# sourceMappingURL=new-item.component.js.map
+exports.UsersFilter = UsersFilter;
+//# sourceMappingURL=users.pipe.js.map

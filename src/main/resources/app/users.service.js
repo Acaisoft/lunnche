@@ -19,7 +19,7 @@ var UsersService = (function () {
         this.GetAll = function () {
             return _this._http.get(_this.actionUrl).map(function (res) { return res.json()._embedded.users; });
         };
-        this.actionUrl = 'http://localhost:8080/api/' + 'users';
+        this.actionUrl = '/api/' + 'users';
         this.headers = new http_1.Headers();
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Accept', 'application/json');

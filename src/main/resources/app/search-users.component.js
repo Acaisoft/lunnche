@@ -6,16 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('angular2/core');
-var NewItemComponent = (function () {
-    function NewItemComponent() {
+var SearchUsersComponent = (function () {
+    function SearchUsersComponent() {
+        this.filterTerm = "";
     }
-    NewItemComponent = __decorate([
+    SearchUsersComponent = __decorate([
         core_1.Component({
-            selector: '.order-newItem',
-            templateUrl: 'app/newOrder/new-item.component.html'
+            selector: 'search-users',
+            templateUrl: 'app/search-users.component.html'
         })
-    ], NewItemComponent);
-    return NewItemComponent;
+    ], SearchUsersComponent);
+    return SearchUsersComponent;
 }());
-exports.NewItemComponent = NewItemComponent;
-//# sourceMappingURL=new-item.component.js.map
+exports.SearchUsersComponent = SearchUsersComponent;
+//# sourceMappingURL=search-users.component.js.map

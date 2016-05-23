@@ -6,16 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('angular2/core');
-var NewItemComponent = (function () {
-    function NewItemComponent() {
+var Configuration = (function () {
+    function Configuration() {
+        this.Server = "http://localhost:8080/";
+        this.ApiUrl = "api/";
+        this.ServerWithApiUrl = this.Server + this.ApiUrl;
     }
-    NewItemComponent = __decorate([
-        core_1.Component({
-            selector: '.order-newItem',
-            templateUrl: 'app/newOrder/new-item.component.html'
-        })
-    ], NewItemComponent);
-    return NewItemComponent;
+    Configuration = __decorate([
+        core_1.Injectable()
+    ], Configuration);
+    return Configuration;
 }());
-exports.NewItemComponent = NewItemComponent;
-//# sourceMappingURL=new-item.component.js.map
+exports.Configuration = Configuration;
+//# sourceMappingURL=app.constants.js.map
