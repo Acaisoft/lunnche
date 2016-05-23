@@ -1,5 +1,6 @@
 .dashboard-name {
   border-bottom: 1px solid rgb(206, 206, 206);
+  @include box-shadow(0 0px 5px 0px rgba(0, 0, 0, 0.25));
   img {
     vertical-align: bottom;
     display: inline-block;
@@ -16,8 +17,7 @@
 }
 
 .dashboard-debts {
-  margin-top: 0;
-  box-shadow: 0 8px 15px -10px rgba(0, 0, 0, 0.25) inset;
+  @include box-shadow(0 8px 15px -10px rgba(0, 0, 0, 0.25) inset, 0 0 5px rgba(0, 0, 0, 0.15));
   width: 98%;
   margin: 0 auto;
   padding: 5px 10px;
@@ -97,4 +97,51 @@
 .searchUsers {
   width: 50%;
   margin: 20px auto 0;
+}
+
+.dashboard-users-list {
+  img {
+    width: 60px;
+    margin-left: 5px;
+    vertical-align: bottom;
+  }
+  li {
+    @include box-shadow(0 0px 5px 0px rgba(0, 0, 0, 0.2));
+  }
+  .dashboard-user-name {
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    margin-left: 10px;
+    .dashboard-user-realName {
+      font-weight: bold;
+      font-size: 1.15em;
+    }
+  }
+  .dashboard-user-debt-options,
+  .dashboard-user-debt-option {
+    display: inline-block;
+    margin-right: 30px;
+    text-align: center;
+  }
+  .dashboard-user-debt-option {
+    margin-top: 11px;
+  }
+  .dashboard-user-debt-wrap {
+    display: inline-block;
+    float: right;
+    margin-top: 7px;
+  }
+  .dashboard-user-debt {
+    display: inline-block;
+    float: right;
+    text-align: right;
+    color: #555;
+    font-size: 0.8em;
+    .dashboard-user-debt-value {
+      color: black;
+      font-size: 2em;
+      line-height: 100%;
+    }
+  }
 }

@@ -6,18 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('angular2/core');
-var UsersFilter = (function () {
-    function UsersFilter() {
+var DashboardListUserComponent = (function () {
+    function DashboardListUserComponent() {
     }
-    UsersFilter.prototype.transform = function (value, term) {
-        return value.filter(function (user) { return user.fullName.toLowerCase().includes(term); });
-    };
-    UsersFilter = __decorate([
-        core_1.Pipe({
-            name: 'usersFilter'
+    DashboardListUserComponent = __decorate([
+        core_1.Component({
+            selector: 'dashboard-users-list-user',
+            templateUrl: 'app/dashboard-list-user-component.html'
         })
-    ], UsersFilter);
-    return UsersFilter;
+    ], DashboardListUserComponent);
+    return DashboardListUserComponent;
 }());
-exports.UsersFilter = UsersFilter;
-//# sourceMappingURL=users.pipe.js.map
+exports.DashboardListUserComponent = DashboardListUserComponent;
+//# sourceMappingURL=dashboard-list-user.component.js.map

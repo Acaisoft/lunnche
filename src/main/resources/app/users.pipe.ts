@@ -5,6 +5,6 @@ import {Pipe, PipeTransform} from 'angular2/core';
 })
 export class UsersFilter {
     transform(value, term) {
-        return value.filter((user) => user.fullName.includes(term));
+        return value.filter((user) => user.fullName.toLowerCase().includes(term));
     }
 }

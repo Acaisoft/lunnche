@@ -6,18 +6,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('angular2/core');
-var UsersFilter = (function () {
-    function UsersFilter() {
+var DebtService = (function () {
+    function DebtService() {
     }
-    UsersFilter.prototype.transform = function (value, term) {
-        return value.filter(function (user) { return user.fullName.toLowerCase().includes(term); });
-    };
-    UsersFilter = __decorate([
-        core_1.Pipe({
-            name: 'usersFilter'
-        })
-    ], UsersFilter);
-    return UsersFilter;
+    DebtService = __decorate([
+        core_1.Injectable()
+    ], DebtService);
+    return DebtService;
 }());
-exports.UsersFilter = UsersFilter;
-//# sourceMappingURL=users.pipe.js.map
+exports.DebtService = DebtService;
+//# sourceMappingURL=dept.service.js.map

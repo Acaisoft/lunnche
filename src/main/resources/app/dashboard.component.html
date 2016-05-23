@@ -63,26 +63,65 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
             <search-users #filter></search-users>
-            <div>
-                <div class="dashboard-order-list">
-                    <ul class="list-unstyled nomargin" *ngIf="users">
+            <div class="dashboard-users-list">
+                <div class="row" *ngIf="users">
+                    <ul class="list-unstyled nomargin col-md-6">
+                        <li class="content dashboard-users-list-user"
+                            *ngFor="let user of users | usersFilter: filter.filterTerm">
+                            <img src="http://placehold.it/250x250" alt="">
+                            <div class="dashboard-user-name">
+                                <div class="dashboard-user-realName">
+                                    {{ user.firstName }} {{ user.lastName }}
+                                </div>
+                                <div class="dashboard-user-username">
+                                    {{ user.username }}
+                                </div>
+                            </div>
+                            <div class="dashboard-user-debt-wrap">
+                                <div class="dashboard-user-debt-options">
+                                    <a href="#">dodaj dług</a><br/>
+                                    <a href="#">odejmij dług</a>
+                                </div>
+                                <div class="dashboard-user-debt">
+                                    Jest ci winien: <br/>
+                                    <span class="dashboard-user-debt-value">{{ user.balance }}.00zł</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled nomargin col-md-6" *ngIf="users">
                         <li class="content" *ngFor="let user of users | usersFilter: filter.filterTerm">
                             <img src="http://placehold.it/250x250" alt="">
                             <div class="dashboard-user-name">
-                                {{ user.firstName }} {{ user.lastName }} {{ user.username }} {{ user.balance }}
+                                <div class="dashboard-user-realName">
+                                    {{ user.firstName }} {{ user.lastName }}
+                                </div>
+                                <div class="dashboard-user-username">
+                                    {{ user.username }}
+                                </div>
+                            </div>
+                            <div class="dashboard-user-debt-wrap">
+                                <div class="dashboard-user-debt-option">
+                                    <a href="#">rozlicz</a>
+                                </div>
+                                <div class="dashboard-user-debt">
+                                    Jesteś mu winien: <br/>
+                                    <span class="dashboard-user-debt-value">{{ user.balance }}.00zł</span>
+                                </div>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
+        <!--
         <div class="col-md-3">
             <div class="dashboard-buttons">
                 <a href="#">Stwórz zamówienie</a>
                 <a href="#">Lista zamówień</a>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>

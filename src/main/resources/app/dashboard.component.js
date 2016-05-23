@@ -10,9 +10,11 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
+var common_1 = require('angular2/common');
 var users_service_1 = require('./users.service');
 var search_users_component_1 = require('./search-users.component');
 var users_pipe_1 = require('./users.pipe');
+var dashboard_list_user_component_1 = require('./dashboard-list-user.component');
 var DashboardComponent = (function () {
     function DashboardComponent(_usersService) {
         this._usersService = _usersService;
@@ -25,7 +27,6 @@ var DashboardComponent = (function () {
         for (var _i = 0, _a = this.users; _i < _a.length; _i++) {
             var aa = _a[_i];
             aa.fullName = aa.firstName + " " + aa.lastName + " " + aa.username;
-            console.log(aa.fullName);
         }
     };
     DashboardComponent.prototype.getUsers = function () {
@@ -41,8 +42,8 @@ var DashboardComponent = (function () {
         core_1.Component({
             selector: 'my-dashboard',
             templateUrl: 'app/dashboard.component.html',
-            directives: [router_1.ROUTER_DIRECTIVES, search_users_component_1.SearchUsersComponent],
-            pipes: [users_pipe_1.UsersFilter]
+            directives: [router_1.ROUTER_DIRECTIVES, search_users_component_1.SearchUsersComponent, dashboard_list_user_component_1.DashboardListUserComponent],
+            pipes: [users_pipe_1.UsersFilter, common_1.CurrencyPipe]
         }),
         __param(0, core_1.Inject(users_service_1.UsersService))
     ], DashboardComponent);
