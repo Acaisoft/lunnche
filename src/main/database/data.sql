@@ -12,6 +12,9 @@ VALUES (1, 'Jan', 'Kowalski', 50, 'jan.kowalski', 'password');
 INSERT INTO "user" (id, first_name, last_name, balance, username, password)
 VALUES (2, 'Stefan', 'Nowak', 100, 'stefan.nowak', 'password');
 
+INSERT INTO "user" (id, first_name, last_name, balance, username, password)
+VALUES (3, 'Maciej', 'Nowak', 150, 'maciej.nowak', 'password');
+
 INSERT INTO purchase (id) VALUES (1);
 INSERT INTO purchase (id) VALUES (2);
 
